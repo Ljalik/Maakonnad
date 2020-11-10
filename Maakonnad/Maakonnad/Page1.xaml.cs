@@ -24,7 +24,6 @@ namespace Maakonnad
                     {
                         new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
                         new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
-                        new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
                     },
                     ColumnDefinitions =
                     {
@@ -51,4 +50,11 @@ namespace Maakonnad
                 picker.Items.Add("Харьюмаа");
                 picker.Items.Add("Хийумаа");
                 picker.Items.Add("Ярвамаа");
-                gr.Children.Add
+                gr.Children.Add(picker, 0, 0);
+                picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
+                entry = new Entry { Text = "Vali kuupäev või kellaaeg" };
+                gr.Children.Add(entry, 0, 1);private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
