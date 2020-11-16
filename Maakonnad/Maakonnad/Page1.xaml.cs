@@ -12,11 +12,13 @@ namespace Maakonnad
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
+        private Picker stol;
+
         public Page1()
         {
             Picker picker;
             Entry entry;
-            Image image;
+            Image img;
             {
                 Grid gr = new Grid
                 {
@@ -33,7 +35,7 @@ namespace Maakonnad
                 };
                 picker = new Picker
                 {
-                    Title = "Maakonnad"
+                    Title = "Уезды"
                 };
                 picker.Items.Add("Валгамаа");
                 picker.Items.Add("Вильяндимаа");
@@ -52,8 +54,45 @@ namespace Maakonnad
                 picker.Items.Add("Ярвамаа");
                 gr.Children.Add(picker, 0, 0);
                 picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
-                entry = new Entry { Text = "Vali kuupäev või kellaaeg" };
-                gr.Children.Add(entry, 0, 1);private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+
+                stol = new Picker
+                {
+                    Title = "Административные центры уездов"
+                };
+                stol.Items.Add("Валга");
+                stol.Items.Add("Вильянди");
+                stol.Items.Add("Выру");
+                stol.Items.Add("Йихви");
+                stol.Items.Add("Йигева");
+                stol.Items.Add("Раквере");
+                stol.Items.Add("Хаапсалу");
+                stol.Items.Add("Пылва");
+                stol.Items.Add("Пярну");
+                stol.Items.Add("Рапла");
+                stol.Items.Add("Курусааре");
+                stol.Items.Add("Тарту");
+                stol.Items.Add("Таллинн");
+                stol.Items.Add("Кярдла");
+                stol.Items.Add("Пайде");
+                gr.Children.Add(stol, 0, 0);
+
+                stol.SelectedIndexChanged += Stol_SelectedIndexChanged;
+                
+                
+                
+                
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        private void Stol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
